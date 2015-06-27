@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag(@profile.profile_pic_url(:thumbnail), :width => 50, :height => 50) %>
+
+<p>
+  <strong>Email:</strong>
+  <%= @profile.user.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Profile Picture URL:</strong>
+  <%= @profile.profile_pic %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @profile.bio %>
+</p>
+
+<p>
+<strong>Phone</strong>
+  <%= @profile.phone %>
+</p>
+
+<% if current_user.profile == @profile %>
+  <%= link_to 'Edit my profile', edit_profile_path(@profile) %> 
+<% end %>
+
